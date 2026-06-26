@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import React, { useState } from "react";
 
 // ── animation variant ─────────────────────────────────────────────────────────
 const fadeUp = {
@@ -67,7 +67,7 @@ const LIVE_EVENTS = [
 ];
 
 const NAV_MAIN = [
-  { icon: "ti-chart-line",      label: "Overview",    active: true  },
+  { icon: "ti-chart-line",      label: "Overview" },
   { icon: "ti-users",           label: "Audience"                    },
   { icon: "ti-world",           label: "Traffic"                     },
   { icon: "ti-device-mobile",   label: "Behavior"                    },
@@ -88,6 +88,7 @@ const ACCENT_CLASSES = {
 
 // ── sub-components ────────────────────────────────────────────────────────────
 function Sidebar() {
+  const [activeNav, setActiveNav] = React.useState("Overview");
   return (
     <aside className="w-[210px] min-w-[210px] flex flex-col px-3 py-[18px] bg-[#0A1628] border-r border-cyan-500/10 relative z-10">
       <span className="font-display text-[17px] font-extrabold tracking-tight text-white px-1.5 mb-6">
